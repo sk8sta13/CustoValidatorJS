@@ -1,0 +1,69 @@
+
+<html>
+    <head>
+        <title>Custom Validate JQuery</title>
+        
+        <script src="js/jquery-1.12.2.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
+		<script src="js/cnpj.validate.js"></script>
+		<script src="js/cpf.validate.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#frmTeste").validate({
+					rules: {
+						cpf: {
+							required: true,
+							cpf: true
+						},
+						cnpj: {
+							required: true,
+							cnpj: true
+						}
+					}
+				});
+            });
+        </script>
+
+        <style>
+            body, input{
+                font-family: Verdana, sans-serif;
+                font-size: 12pt;
+            }
+            table{
+                margin: 0 auto;
+            }
+            td{
+                padding: 3px;
+            }
+            label{
+                cursor: pointer;
+            }
+            h1, h3, h4{
+                text-align: center;
+            }
+			label.error {
+				color: red;
+				margin-left: 10px;
+				font-family: inherit;
+				font-size: small;
+				font-style: italic;
+			}
+        </style>
+    </head>
+    <body>
+        <h1>Custom validations for jQuery Validation Plugin</h1><br />
+		<form id="frmTeste">
+			<table>
+				<tr>
+					<td><label for="cpf">CPF</label></td>
+					<td><input type="text" name="cpf" id="cpf" /></td>
+				</tr>
+				<tr>
+					<td><label for="cnpj">CNPJ</label></td>
+					<td><input type="text" name="cnpj" id="cnpj" /></td>
+				</tr>
+			</table>
+		</form>
+        <h4>Custom validations by <a href="mailto:sk8sta13@gmail.com">Marcelo S. Campos</a></h4>
+    </body>
+</html>
